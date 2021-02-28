@@ -70,7 +70,6 @@ Arguments:
     - Hometown (str)
 """
 
-# Write your function here
 def hometown_greeting(first_name, last_name, hometown):
     full_name = f"{first_name} {last_name}"
     if hometown == 'Oakland':
@@ -116,7 +115,15 @@ Return:
 """
 
 # Write your function here
+berry_ship_price = 0
+ship_price_not_berries = 5
 
+def shipping_cost(item):
+    if item != 'berry':
+        return print(ship_price_not_berries)
+    else:
+        return print(berry_ship_price)
+    
 
 """PROMPT 6
 
