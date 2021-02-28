@@ -29,9 +29,13 @@ def print_indices(items):
     # add item and index to a string
     # print one by one in the loop
 
-    for i in range(len(items)):
-        for item in items:
-            print(f"{item} {i}")
+    for item in items:
+        for i in range(0, len(items), 3):
+            return print(f"{item} {i}")
+    # output:
+    # apple 0
+    # berry 0
+    # cherry 0
 
 
 def words_in_common(words1, words2):
@@ -76,19 +80,19 @@ def words_in_common(words1, words2):
                 new_list.sort()
     return print(new_list)
 
-# def every_other_item(items):
-#     """Return every other item in `items`, starting at first item.
+def every_other_item(items):
+    """Return every other item in `items`, starting at first item.
 
-#     For example:
+    For example:
 
-#     >>> every_other_item(['a', 400, True, 'b', 0])
-#     ['a', True, 0]
-#     """
+    >>> every_other_item(['a', 400, True, 'b', 0])
+    ['a', True, 0]
+    """
 
-#     new_list = []
-#     for index in range(0, len(items), 2):
-#         new_list.append(items[index])
-#     return print(new_list)
+    new_list = []
+    for index in range(0, len(items), 2):
+        new_list.append(items[index])
+    return print(new_list)
 
 
 def smallest_n_items(items, n):
