@@ -22,10 +22,10 @@ Return:
 """
 
 # Write your function here
-def is_hometown(str):
-    if str == 'Oakland':
-        return print(True)
-    return print(False)
+def is_hometown(hometown):
+    if hometown == 'Oakland':
+        return True
+    return False
 
 
 """PROMPT 2
@@ -44,7 +44,9 @@ Return:
 """
 
 # Write your function here
-
+def full_name(first_name, last_name):
+    full_name = f"{first_name} {last_name}"
+        return full_name
 
 """PROMPT 3
 
@@ -69,7 +71,12 @@ Arguments:
 """
 
 # Write your function here
-
+def hometown_greeting(first_name, last_name, hometown):
+    full_name = f"{first_name} {last_name}"
+    if hometown == 'Oakland':
+        return print(f"Hi {full_name}, we're from the same place!")
+    else:
+        return print(f"Hi {full_name}, I'd like to visit {hometown}!")
 
 """PROMPT 4
 
