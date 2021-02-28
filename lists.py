@@ -23,8 +23,12 @@ def print_indices(items):
         berry 1
         cherry 2
     """
-
-    print("Nothing at all")
+    
+    #doesnt work    
+    # for item in items:
+    #     for i in range(len(items)):
+    #         i = str()
+    #         return print(item + i)
 
 
 def words_in_common(words1, words2):
@@ -37,30 +41,36 @@ def words_in_common(words1, words2):
 
     For example:
 
-        >>> words_in_common(
-        ...     ['Python', 'Python', 'Python'],
-        ...     ['Lizard', 'Turtle', 'Python']
-        ... )
-        ['Python']
+    >>> words_in_common(
+    ...     ['Python', 'Python', 'Python'],
+    ...     ['Lizard', 'Turtle', 'Python']
+    ... )
+    ['Python']
 
     The returned list should not have any duplicates:
 
-        >>> words_in_common(
-        ...     ['cheese', 'cheese', 'cheese', 'cake'],
-        ...     ['cheese', 'hummus', 'beets', 'cake']
-        ... )
-        ['cake', 'cheese']
+    >>> words_in_common(
+    ...     ['cheese', 'cheese', 'cheese', 'cake'],
+    ...     ['cheese', 'hummus', 'beets', 'cake']
+    ... )
+    ['cake', 'cheese']
 
     If there are no words in common, return an empty list:
 
-        >>> words_in_common(
-        ...     ['lamb', 'chili', 'cheese'],
-        ...     ['cake', 'ice cream']
-        ... )
-        []
+    >>> words_in_common(
+    ...     ['lamb', 'chili', 'cheese'],
+    ...     ['cake', 'ice cream']
+    ... )
+    []
     """
-
-    return ['the wrong thing']
+    new_list = []
+    for word in words1:
+        if word in new_list:
+            continue
+        for item in words2:
+            if word == item:
+                new_list.append(word)
+    return print(new_list)
 
 
 def every_other_item(items):
@@ -68,11 +78,14 @@ def every_other_item(items):
 
     For example:
 
-       >>> every_other_item(['a', 400, True, 'b', 0])
-       ['a', True, 0]
+    >>> every_other_item(['a', 400, True, 'b', 0])
+    ['a', True, 0]
     """
 
-    return ['the wrong thing']
+    new_list = []
+    for index in range(0, len(items), 2):
+        new_list.append(items[index])
+    return print(new_list)
 
 
 def smallest_n_items(items, n):
@@ -97,3 +110,13 @@ def smallest_n_items(items, n):
     """
 
     return []
+
+#####################################################################
+# END OF PRACTICE: You can ignore everything below.
+
+if __name__ == "__main__":
+    import doctest
+
+    result = doctest.testmod()
+    if not result.failed:
+        print("\nALL TESTS PASSED. GOOD WORK!\n")
