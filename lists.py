@@ -109,7 +109,14 @@ def smallest_n_items(items, n):
         [1, 1]
     """
 
-    return []
+    new_list = []
+    for item in items:
+        if n == 0:
+            return print(new_list)
+        items.sort()
+        new_list = items[:n]
+        new_list.reverse()
+    return print(new_list)
 
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.
