@@ -22,6 +22,10 @@ Return:
 """
 
 # Write your function here
+def is_hometown(str):
+    if str == 'Oakland':
+        return print(True)
+    return print(False)
 
 
 """PROMPT 2
@@ -182,3 +186,4 @@ Return:
 """
 
 # Write your function here
+
