@@ -10,10 +10,10 @@ def print_indices(items):
     Do this without using a "counting variable" --- in other words,
     DON'T do this:
 
-        >>> count = 0
-        >>> for item in list:
-        ...     print(count)
-        ...     count = count + 1
+        # # >>> count = 0
+        # # >>> for item in list:
+        # ...     print(count)
+        # ...     count = count + 1
         ...
 
     The output should look like this:

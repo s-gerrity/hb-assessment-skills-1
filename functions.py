@@ -22,9 +22,16 @@ Return:
 """
 
 # Write your function here
+
 def is_hometown(hometown):
+    """Return `True` if a town name matches the name of my hometown"""
+
+    #Compare if the hometown arguement is the same as my hometown
     if hometown == 'Oakland':
+        #If it is the same, return `True`
         return True
+
+    #If it is not the same, return `False`    
     return False
 
 
@@ -45,7 +52,12 @@ Return:
 
 # Write your function here
 def full_name(first_name, last_name):
+    """Take in a first and last name to return a full name."""
+
+    #Use an f-string to combine first and last name arguments 
+    # to make the full name
     full_name = f"{first_name} {last_name}"
+        #Surface the full name
         return full_name
 
 """PROMPT 3
@@ -69,11 +81,20 @@ Arguments:
     - Last name (str)
     - Hometown (str)
 """
+# Write your function here
 
 def hometown_greeting(first_name, last_name, hometown):
+    """Print a greeting according to if you have the same hometown and address them by name."""
+
+    #Combine first and last name to make their full name
     full_name = f"{first_name} {last_name}"
+    #Compare the users hometown to our hometown
     if hometown == 'Oakland':
+
+        #Message for if hometowns are the same
         return print(f"Hi {full_name}, we're from the same place!")
+
+        #Message if they are different hometowns
     else:
         return print(f"Hi {full_name}, I'd like to visit {hometown}!")
 
@@ -99,11 +120,23 @@ Return:
 """
 
 # Write your function here
-list_of_berries = ['strawberry', 'raspberry', 'blackberry', 'currant']
+
+BERRIES = ['strawberry', 'raspberry', 'blackberry', 'currant']
+#Official list of berries
+
 def is_berry(fruit):
-    for berry in list_of_berries:
+    """Determine if a fruit mentioned qualifies as a berry."""
+
+    #Check each berry in official list of berries
+    for berry in berries:
+    
+        #Compare fruit input to our official list of berries
         if fruit == berry:
+
+            #If the fruit input is in our berry list, return `True`
             return print(True)
+
+    #If the fruit is not a berry, return `False`        
     return print(False) 
 
 """PROMPT 5
@@ -118,16 +151,28 @@ Arguments:
 Return:
     - Shipping cost (int)
 """
-
+ 
 # Write your function here
-berry_ship_price = 0
-ship_price_not_berries = 5
 
-list_of_berries = ['strawberry', 'raspberry', 'blackberry', 'currant']
+#Berries ship for a different price than all items
+BERRY_SHIP_PRICE = 0
+#Everything else does not ship for free
+SHIP_PRICE_NOT_BERRIES = 5
+
+#Official list of items that qualify as a berry
+BERRIES = ['strawberry', 'raspberry', 'blackberry', 'currant']
+
+
 def shipping_cost(item):
-    for berry in list_of_berries:
-         if item == berry:
+    """Determine shipping cost according to item; all items have the same shipping EXCEPT berries"""
+
+    #Check through each berry in the official list
+    for berry in berries:
+        #If the item is a berry, determine price
+        if item == berry:
+            #Surface berry specific ship price
             return print(berry_ship_price)
+    #Surface price for any non-berry item       
     return print(ship_price_not_berries)
     
 
@@ -158,27 +203,47 @@ Return:
 """
 
 # Write your function here
+
 def total_cost(base_price, state, tax=0.05):
+    """Get total order cost based on item, state, and tax. 
+    Some states have special fees. If tax is not specified, default to 5%"""
+
+    #Special fees for CA, PA, & MA in US dollars $ or percentages %
     recycling_fee_ca = .03
     safety_fee_pa = 2
     item_under_or_equal_100_ma = 1
     item_over_100_ma = 3
+
+    #Check if state is MA (Massachusettes) bc special fees apply for base price totals
     if state == 'MA':
+        #Orders under $100 have a special fee
         if base_price <= 100:
+            #Calculate total with tax, special fee, and base price
             return print(((base_price * tax) + base_price) + item_under_or_equal_100_ma)
+        #Orders over $100 have a special fee
         elif base_price > 100:
+            #Calculate total with tax, special fee, and base price
             return print(((base_price * tax)+ base_price) + item_over_100_ma)
+
+    #Check if state is PA (Pennsylvania) bc special fees apply for safety fee on all PA orders        
     elif state == 'PA':
+        #Calculate total with tax, special fee, and base price
         return print(((base_price * tax) + base_price) + safety_fee_pa)
+
+    #Check if state is CA (California) bc special tax applies for recycling fee on all CA orders
     elif state == 'CA':
+        #Calculate total with tax, special fee, and base price
         return print((base_price * recycling_fee_ca) + (base_price * tax) + base_price)
+
+    #If state not MA, PA, CA proceed to calculate tax and base price
     else:
+        #Surface total
         return print((base_price * tax) + base_price)
 
 """PROMPT 7
 
 Write a function that takes in a list and *any* number of additional arguments.
-The function should add all those items to the end of the  list and return
+The function should add all those items to the end of the list and return
 the list.
 
 We haven't taught you how to do this! You'll need to do some research on your
@@ -194,11 +259,21 @@ Return:
 """
 
 # Write your function here
-def growing_to_do_list(original_to_do_list, *argv):
-    new_to_do_list = [*argv]
-    for item in new_to_do_list:
-        original_to_do_list.append(item)
-    return print(original_to_do_list)
+
+def growing_to_do_list(todays_to_do_list, *argv):
+    """For our to-do list that we start every morning, we add any amount 
+    of new items midday. This list will add the new items."""
+
+    #New additions to add to the main to-do list for today
+    midday_to_do_list_adds = [*argv]
+    #Review each item in the new to-do list
+    for item in midday_to_do_list_adds:
+
+        #Add the new items from the midday list to our final to-do list for today
+        todays_to_do_list.append(item)
+
+    #Surface the final to-do list for today    
+    return print(todays_to_do_list)
 
 """PROMPT 8
 
@@ -225,7 +300,13 @@ Return:
 """
 
 # Write your function here
-def new_tuple(new_var):
-    another = new_var * 3
-    x = (new_var, another)
-    return print(x)
+
+def call_and_response(call):
+    """For our protest this weekend, we have a call and response for the group."""
+
+    #The response to the call should be repeated 3 times
+    response = call * 3
+    #Our official protest song is the call then the response (the call three times)
+    protest_song = (call, response)
+    #Shout our protest song!
+    return print(protest_song)
