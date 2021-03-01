@@ -158,7 +158,22 @@ Return:
 """
 
 # Write your function here
-
+def total_cost(base_price, state, tax=0.05):
+    recycling_fee_ca = .03
+    safety_fee_pa = 2
+    item_under_or_equal_100_ma = 1
+    item_over_100_ma = 3
+    if state == 'MA':
+        if base_price <= 100:
+            return print(((base_price * tax) + base_price) + item_under_or_equal_100_ma)
+        elif base_price > 100:
+            return print(((base_price * tax)+ base_price) + item_over_100_ma)
+    elif state == 'PA':
+        return print(((base_price * tax) + base_price) + safety_fee_pa)
+    elif state == 'CA':
+        return print((base_price * recycling_fee_ca) + (base_price * tax) + base_price)
+    else:
+        return print((base_price * tax) + base_price)
 
 """PROMPT 7
 
