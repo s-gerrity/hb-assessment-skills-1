@@ -194,7 +194,11 @@ Return:
 """
 
 # Write your function here
-
+def growing_to_do_list(original_to_do_list, *argv):
+    new_to_do_list = [*argv]
+    for item in new_to_do_list:
+        original_to_do_list.append(item)
+    return print(original_to_do_list)
 
 """PROMPT 8
 
