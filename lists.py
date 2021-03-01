@@ -23,12 +23,17 @@ def print_indices(items):
         berry 1
         cherry 2
     """
-
+    #Determine how many items in the list by length of list
     for i in range(0, len(items)):
+        #Go through each item in the list
         for item in items:
+            #If the index has not reached the end of the list
             if i < len(items):
+                #Pring the name of the item and its index placement
                 print(f"{item} {i}")
+                #Increase the index placement for the next item in the list
                 i += 1
+        #If the index has reached the length of the list, stop printing and leave this function
         break
 
 
@@ -64,14 +69,25 @@ def words_in_common(words1, words2):
     ... )
     []
     """
+
+    #create a new, empty list
     new_list = []
+
+    #Check through each word in the list
     for word in words1:
+        #Check if the word in the list is already in the new list
         if word in new_list:
+            #If it is, start the loop again and go through the next item in the new list
             continue
+        #Check the items in our other list
         for item in words2:
+            #Confirm if the item is the same as a word in our other list
             if word == item:
+                #If it's the same, add it to our new list
                 new_list.append(word)
+                #Always sort the new list in alphabetical order
                 new_list.sort()
+    #When both lists have been searched and compared, print the new list of words in common
     return print(new_list)
 
 def every_other_item(items):
@@ -83,9 +99,16 @@ def every_other_item(items):
     ['a', True, 0]
     """
 
+    #Make a new empty list
     new_list = []
+
+    #go through the items in the list, starting at the beginning, 
+    # skipping every other one, and stopping when it's reached the end of the list
     for index in range(0, len(items), 2):
+        #Add every other item to the new list
         new_list.append(items[index])
+
+    #Print the new list!
     return print(new_list)
 
 
@@ -110,21 +133,20 @@ def smallest_n_items(items, n):
         [1, 1]
     """
 
+    #Start a new empty list
     new_list = []
+    #Go through each item in the list of items
     for item in items:
+        #If the input n has 0
         if n == 0:
+            #Return an empty list
             return print(new_list)
+        #If input is not zero, sort the items in the list from smallest to largest
         items.sort()
+        #add the first n amount of items to the new empty list
         new_list = items[:n]
+        #Swap the order so the items go in descending order
         new_list.reverse()
+    #Print the new list of numbers    
     return print(new_list)
-
-#####################################################################
-# END OF PRACTICE: You can ignore everything below.
-
-if __name__ == "__main__":
-    import doctest
-
-    result = doctest.testmod()
-    if not result.failed:
-        print("\nALL TESTS PASSED. GOOD WORK!\n")
+    
