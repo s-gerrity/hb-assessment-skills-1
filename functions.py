@@ -57,8 +57,8 @@ def full_name(first_name, last_name):
     #Use an f-string to combine first and last name arguments 
     # to make the full name
     full_name = f"{first_name} {last_name}"
-        #Surface the full name
-        return full_name
+    #Surface the full name
+    return full_name
 
 """PROMPT 3
 
@@ -121,7 +121,7 @@ Return:
 
 # Write your function here
 
-BERRIES = ['strawberry', 'raspberry', 'blackberry', 'currant']
+berries = ['strawberry', 'raspberry', 'blackberry', 'currant']
 #Official list of berries
 
 def is_berry(fruit):
@@ -134,10 +134,10 @@ def is_berry(fruit):
         if fruit == berry:
 
             #If the fruit input is in our berry list, return `True`
-            return print(True)
+            return True
 
     #If the fruit is not a berry, return `False`        
-    return print(False) 
+    return False
 
 """PROMPT 5
 
@@ -155,12 +155,12 @@ Return:
 # Write your function here
 
 #Berries ship for a different price than all items
-BERRY_SHIP_PRICE = 0
+berry_ship_price = 0
 #Everything else does not ship for free
-SHIP_PRICE_NOT_BERRIES = 5
+ship_price_not_berries = 5
 
 #Official list of items that qualify as a berry
-BERRIES = ['strawberry', 'raspberry', 'blackberry', 'currant']
+berries = ['strawberry', 'raspberry', 'blackberry', 'currant']
 
 
 def shipping_cost(item):
@@ -171,9 +171,9 @@ def shipping_cost(item):
         #If the item is a berry, determine price
         if item == berry:
             #Surface berry specific ship price
-            return print(berry_ship_price)
+            return berry_ship_price
     #Surface price for any non-berry item       
-    return print(ship_price_not_berries)
+    return ship_price_not_berries
     
 
 """PROMPT 6
@@ -219,26 +219,26 @@ def total_cost(base_price, state, tax=0.05):
         #Orders under $100 have a special fee
         if base_price <= 100:
             #Calculate total with tax, special fee, and base price
-            return print(((base_price * tax) + base_price) + item_under_or_equal_100_ma)
+            return ((base_price * tax) + base_price) + item_under_or_equal_100_ma
         #Orders over $100 have a special fee
         elif base_price > 100:
             #Calculate total with tax, special fee, and base price
-            return print(((base_price * tax)+ base_price) + item_over_100_ma)
+            return ((base_price * tax)+ base_price) + item_over_100_ma
 
     #Check if state is PA (Pennsylvania) bc special fees apply for safety fee on all PA orders        
     elif state == 'PA':
         #Calculate total with tax, special fee, and base price
-        return print(((base_price * tax) + base_price) + safety_fee_pa)
+        return ((base_price * tax) + base_price) + safety_fee_pa
 
     #Check if state is CA (California) bc special tax applies for recycling fee on all CA orders
     elif state == 'CA':
         #Calculate total with tax, special fee, and base price
-        return print((base_price * recycling_fee_ca) + (base_price * tax) + base_price)
+        return (base_price * recycling_fee_ca) + (base_price * tax) + base_price
 
     #If state not MA, PA, CA proceed to calculate tax and base price
     else:
         #Surface total
-        return print((base_price * tax) + base_price)
+        return (base_price * tax) + base_price
 
 """PROMPT 7
 
@@ -273,7 +273,7 @@ def growing_to_do_list(todays_to_do_list, *argv):
         todays_to_do_list.append(item)
 
     #Surface the final to-do list for today    
-    return print(todays_to_do_list)
+    return todays_to_do_list
 
 """PROMPT 8
 
@@ -309,4 +309,4 @@ def call_and_response(call):
     #Our official protest song is the call then the response (the call three times)
     protest_song = (call, response)
     #Shout our protest song!
-    return print(protest_song)
+    return protest_song

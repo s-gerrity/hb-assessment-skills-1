@@ -48,17 +48,17 @@ def words_in_common(words1, words2):
     For example:
 
     >>> words_in_common(
-    ...     ['Python', 'Python', 'Python'],
-    ...     ['Lizard', 'Turtle', 'Python']
-    ... )
+        ...     ['Python', 'Python', 'Python'],
+        ...     ['Lizard', 'Turtle', 'Python']
+        ... )
     ['Python']
 
     The returned list should not have any duplicates:
 
     >>> words_in_common(
-    ...     ['cheese', 'cheese', 'cheese', 'cake'],
-    ...     ['cheese', 'hummus', 'beets', 'cake']
-    ... )
+        ...     ['cheese', 'cheese', 'cheese', 'cake'],
+        ...     ['cheese', 'hummus', 'beets', 'cake']
+        ... )
     ['cake', 'cheese']
 
     If there are no words in common, return an empty list:
@@ -149,4 +149,3 @@ def smallest_n_items(items, n):
         new_list.reverse()
     #Print the new list of numbers    
     return print(new_list)
-    
