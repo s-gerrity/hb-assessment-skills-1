@@ -225,4 +225,7 @@ Return:
 """
 
 # Write your function here
-
+def new_tuple(new_var):
+    another = new_var * 3
+    x = (new_var, another)
+    return print(x)
