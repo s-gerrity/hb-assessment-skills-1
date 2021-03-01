@@ -99,7 +99,12 @@ Return:
 """
 
 # Write your function here
-
+list_of_berries = ['strawberry', 'raspberry', 'blackberry', 'currant']
+def is_berry(fruit):
+    for berry in list_of_berries:
+        if fruit == berry:
+            return print(True)
+    return print(False) 
 
 """PROMPT 5
 
@@ -118,11 +123,12 @@ Return:
 berry_ship_price = 0
 ship_price_not_berries = 5
 
+list_of_berries = ['strawberry', 'raspberry', 'blackberry', 'currant']
 def shipping_cost(item):
-    if item != 'berry':
-        return print(ship_price_not_berries)
-    else:
-        return print(berry_ship_price)
+    for berry in list_of_berries:
+         if item == berry:
+            return print(berry_ship_price)
+    return print(ship_price_not_berries)
     
 
 """PROMPT 6
