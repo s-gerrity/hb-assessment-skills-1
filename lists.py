@@ -23,19 +23,13 @@ def print_indices(items):
         berry 1
         cherry 2
     """
-    
-    #doesnt work    
-    # find the index for each item in items
-    # add item and index to a string
-    # print one by one in the loop
 
-    for item in items:
-        for i in range(0, len(items), 3):
-            return print(f"{item} {i}")
-    # output:
-    # apple 0
-    # berry 0
-    # cherry 0
+    for i in range(0, len(items)):
+        for item in items:
+            if i < len(items):
+                print(f"{item} {i}")
+                i += 1
+        break
 
 
 def words_in_common(words1, words2):
